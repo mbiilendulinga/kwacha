@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kwacha Bank Dashboard</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f4f6f8;
+      color: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    .report-card {
+      width: 100%;
+      max-width: 1000px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+
+    .report-card h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      padding: 20px 24px;
+      border-bottom: 1px solid #e6e9ee;
+    }
+
+    .report-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10; /* matches the original 600 x 373.5 shape */
+    }
+
+    .report-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    /* Fallback for very old browsers without aspect-ratio support */
+    @supports not (aspect-ratio: 16 / 10) {
+      .report-frame { height: 0; padding-bottom: 62.25%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="report-card">
+    <h1>Kwacha Bank</h1>
+    <div class="report-frame">
+      <iframe
+        title="Kwacha Bank"
+        src="https://app.powerbi.com/view?r=eyJrIjoiYWYwYjljNjItYmYxNC00YjYzLWExODItZjQ3N2QwYzlhNzYzIiwidCI6ImIxNDEzOWViLWNjZDQtNDZmMy1hZjZhLWJjM2MyZjQ2YTMyOSJ9"
+        frameborder="0"
+        allowfullscreen="true"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+</body>
+</html>
