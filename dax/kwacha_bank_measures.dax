@@ -1,0 +1,189 @@
+-- ============================================
+-- KWACHA BANK - POWER BI MEASURES
+-- ============================================
+
+
+-- ============================================
+-- 1. CUSTOMER MEASURES
+-- ============================================
+
+Total Customers =
+DISTINCTCOUNT('kwacha_bank customers'[customer_id])
+
+
+Active Customers =
+CALCULATE(
+    DISTINCTCOUNT('kwacha_bank customers'[customer_id]),
+    'kwacha_bank customers'[is_active] = TRUE()
+)
+
+
+Average Monthly Income =
+AVERAGE('kwacha_bank customers'[monthly_income])
+
+
+Average Dependents =
+AVERAGE('kwacha_bank customers'[dependents])
+
+
+KYC Verified Customers =
+CALCULATE(
+    DISTINCTCOUNT('kwacha_bank customers'[customer_id]),
+    'kwacha_bank customers'[kyc_status] = "Verified"
+)
+
+
+-- ============================================
+-- 2. ACCOUNT & DEPOSIT MEASURES
+-- ============================================
+
+Total Accounts =
+DISTINCTCOUNT('kwacha_bank accounts'[account_id])
+
+
+Active Accounts =
+CALCULATE(
+    DISTINCTCOUNT('kwacha_bank accounts'[account_id]),
+    'kwacha_bank accounts'[status] = "Active"
+)
+
+
+Total Deposits =
+CALCULATE(
+    SUM('kwacha_bank accounts'[current_balance]),
+    'kwacha_bank accounts'[status] = "Active"
+)
+
+
+Average Account Balance =
+AVERAGE('kwacha_bank accounts'[current_balance])
+
+
+Average Interest Rate =
+AVERAGE('kwacha_bank accounts'[interest_rate])
+
+
+-- ============================================
+-- 3. TRANSACTION MEASURES
+-- ============================================
+
+Total Transactions =
+DISTINCTCOUNT('kwacha_bank transactions'[transaction_id])
+
+
+Total Transaction Value =
+SUM('kwacha_bank transactions'[amount])
+
+
+Average Transaction =
+AVERAGE('kwacha_bank transactions'[amount])
+
+
+Digital Transactions =
+DISTINCTCOUNT('kwacha_bank digital_transactions'[digital_transaction_id])
+
+
+ATM Transactions =
+DISTINCTCOUNT('kwacha_bank atm_transactions'[atm_transaction_id])
+
+
+Reversed Transactions =
+CALCULATE(
+    DISTINCTCOUNT('kwacha_bank transactions'[transaction_id]),
+    'kwacha_bank transactions'[is_reversal] = TRUE()
+)
+
+
+-- ============================================
+-- 4. LOAN & CREDIT RISK MEASURES
+-- ============================================
+
+Total Loans =
+DISTINCTCOUNT('kwacha_bank loans'[loan_id])
+
+
+Total Loan Amount =
+SUM('kwacha_bank loans'[loan_amount])
+
+
+Outstanding Loans =
+SUM('kwacha_bank loans'[outstanding_balance])
+
+
+Average Loan Size =
+AVERAGE('kwacha_bank loans'[loan_amount])
+
+
+Average Credit Score =
+AVERAGE('kwacha_bank loans'[credit_score])
+
+
+Defaulted Loans =
+CALCULATE(
+    DISTINCTCOUNT('kwacha_bank loans'[loan_id]),
+    'kwacha_bank loans'[loan_status] = "Defaulted"
+)
+
+
+-- ============================================
+-- 5. FRAUD & RISK MEASURES
+-- ============================================
+
+Fraud Alerts =
+DISTINCTCOUNT('kwacha_bank fraud_alerts'[alert_id])
+
+
+Confirmed Fraud =
+CALCULATE(
+    DISTINCTCOUNT('kwacha_bank fraud_alerts'[alert_id]),
+    'kwacha_bank fraud_alerts'[confirmed_fraud] = TRUE()
+)
+
+
+High Severity Alerts =
+CALCULATE(
+    DISTINCTCOUNT('kwacha_bank fraud_alerts'[alert_id]),
+    'kwacha_bank fraud_alerts'[severity] = "High"
+)
+
+
+Average Risk Score =
+AVERAGE('kwacha_bank fraud_alerts'[risk_score])
+
+
+Open Investigations =
+CALCULATE(
+    DISTINCTCOUNT('kwacha_bank fraud_alerts'[alert_id]),
+    'kwacha_bank fraud_alerts'[investigation_status] = "Open"
+)
+
+
+-- ============================================
+-- 6. BRANCH & EMPLOYEE MEASURES
+-- ============================================
+
+Total Employees =
+DISTINCTCOUNT('kwacha_bank employees'[employee_id])
+
+
+Total Branches =
+DISTINCTCOUNT('kwacha_bank branches'[branch_id])
+
+
+-- ============================================
+-- 7. MONTHLY / TREND MEASURES
+-- ============================================
+
+Monthly Deposits =
+SUM('kwacha_bank monthly_customer_metrics'[total_deposits])
+
+
+-- ============================================
+-- 8. BRANCH CUSTOMER MEASURE
+-- ============================================
+
+Branch Customers =
+CALCULATE(
+    DISTINCTCOUNT('kwacha_bank accounts'[customer_id]),
+    'kwacha_bank accounts'[status] = "Active"
+)

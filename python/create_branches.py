@@ -620,7 +620,7 @@ def main():
 
         print(f"\nMySQL Error: {e}")
 
-    finally:
+    finally:  
 
         cursor.close()
         connection.close()
