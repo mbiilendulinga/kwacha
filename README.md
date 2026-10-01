@@ -1,36 +1,37 @@
-# Kwacha Bank | Banking Performance & Health
+Kwacha Bank | Banking Performance & Health
 
 https://www.mbiile.com/projects/kwacha-bank/
 
+
 A synthetic banking analytics project examining customer growth, deposits, transactions, lending, credit risk, fraud monitoring and branch performance within a Zambian retail banking environment.
 
-## Project Overview
+Project Overview
 
 The objective of this project is to analyse a bank as an operating business rather than focusing on a single banking KPI.
 
 The analysis brings together customer, account, deposit, transaction, loan, fraud and branch data to answer questions such as:
 
-* How quickly is the customer base growing?
-* Are account openings growing at the same rate as customers?
-* Where are deposits concentrated?
-* How has lending activity changed?
-* What does the current loan status mix look like?
-* How is customer risk distributed?
-* What does transaction activity look like across channels?
-* How large is the fraud-alert workload?
-* How does branch activity differ across locations?
+ How quickly is the customer base growing?
+ Are account openings growing at the same rate as customers?
+ Where are deposits concentrated?
+ How has lending activity changed?
+ What does the current loan status mix look like?
+ How is customer risk distributed?
+ What does transaction activity look like across channels?
+ How large is the fraud-alert workload?
+ How does branch activity differ across locations?
 
 The project uses synthetic data and is intended for portfolio and analytical demonstration purposes.
 
-## Key Results
+Key Results
 
-### Customer Growth
+Customer Growth
 
 Customer acquisition increased from 1,103 in 2021 to 1,335 in 2025, representing a 21.0% increase.
 
 Growth slowed in 2025 to 3.3%, following increases of 10.1% in 2023 and 7.8% in 2024.
 
-### Account Growth
+Account Growth
 
 Account openings increased from 847 in 2021 to 3,753 in 2025.
 
@@ -38,7 +39,7 @@ That represents a 343.1% increase, substantially faster than customer growth.
 
 The dataset contains 15,426 accounts across 10,000 customers, or approximately 1.54 accounts per customer.
 
-### Deposits
+Deposits
 
 Current account balances total approximately K2.031 billion.
 
@@ -46,7 +47,7 @@ The five largest account categories account for 72.5% of total balances.
 
 Salary and Basic Savings accounts together represent approximately 35.5% of balances.
 
-### Lending
+Lending
 
 Cumulative loan disbursements total K290.9 million, with K90.7 million outstanding.
 
@@ -60,7 +61,7 @@ Annual loan disbursements increased from:
 
 Disbursement value increased by 121.0% between 2023 and 2025.
 
-### Risk
+Risk
 
 The customer risk profile is:
 
@@ -70,17 +71,17 @@ The customer risk profile is:
 | Medium |     3,295 | 33.0% |
 | High   |     1,541 | 15.4% |
 
-### Fraud Monitoring
+Fraud Monitoring
 
 The reconciled fraud dataset contains 43,483 alerts.
 
 Approximately 88.0% are classified as low severity, 10.9% as medium, 1.1% as high and 0.03% as critical.
 
-## Data
+Data
 
 The project contains several interconnected areas of banking data.
 
-### Customers
+Customers
 
 10,000 customer records covering:
 
@@ -91,7 +92,7 @@ The project contains several interconnected areas of banking data.
  Risk classification
  Acquisition history
 
-### Accounts
+Accounts
 
 15,426 account records covering:
 
@@ -101,7 +102,7 @@ The project contains several interconnected areas of banking data.
  Current balance
  Available balance
 
-### Transactions
+Transactions
 
 1,000,000 transaction records covering:
 
@@ -111,7 +112,7 @@ The project contains several interconnected areas of banking data.
  Date
  Device information where available
 
-### Loans
+Loans
 
 5,000 loan records covering:
 
@@ -125,7 +126,7 @@ The project contains several interconnected areas of banking data.
  Default probability
  Payment status
 
-### Fraud
+Fraud
 
 43,483 fraud-alert records covering:
 
@@ -136,7 +137,7 @@ The project contains several interconnected areas of banking data.
  Investigation status
  Confirmation status
 
-### Branches
+Branches
 
 Branch-level information covering:
 
@@ -146,7 +147,7 @@ Branch-level information covering:
  Outstanding loans
  Monthly operating costs
 
-## Technology Stack
+Technology Stack
 
 Python
 
@@ -172,7 +173,7 @@ Django
 
 Used to present the project as part of the portfolio website.
 
-## Project Structure
+Project Structure
 
 ```text
 kwacha-bank/
@@ -203,7 +204,7 @@ kwacha-bank/
 └── README.md
 ```
 
-## Analytical Period
+Analytical Period
 
 The project uses different periods depending on the dataset available.
 
@@ -219,7 +220,7 @@ The project uses different periods depending on the dataset available.
 
 The 2021–2025 period is therefore used for the main customer and account growth analysis rather than forcing incomplete transaction or fraud history into the same trend.
 
-## Data Validation
+Data Validation
 
 Data validation was performed before the results were interpreted.
 
@@ -235,7 +236,7 @@ The severity, province, detection-method and investigation-status breakdowns als
 
 This prevents the report from using an incorrect total of 53,483.
 
-## Important Limitations
+Important Limitations
 
 This is a synthetic dataset, so the results should not be interpreted as the performance of an actual bank.
 
@@ -249,7 +250,7 @@ The branch deposit-to-cost calculation is a project-specific comparison metric r
 
 Device information is available for only a subset of transaction records.
 
-## Dashboard
+Dashboard
 
 The Power BI report examines:
 
@@ -263,13 +264,13 @@ The Power BI report examines:
 
 The report can be filtered by dimensions including year, province, branch, customer segment, account type, loan category, loan status and risk classification.
 
-## Portfolio Project
+Portfolio Project
 
 The project is also available as an interactive project page:
 
 https://www.mbiile.com/projects/kwacha-bank/
 
-## Purpose
+Purpose
 
 This project was built to demonstrate practical skills in:
 
